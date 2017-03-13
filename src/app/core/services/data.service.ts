@@ -6,7 +6,7 @@ import { Observer } from 'rxjs/Observer';
 import 'rxjs/add/operator/map'; 
 import 'rxjs/add/operator/catch';
 
-import { INode, IEdge } from '../shared/interfaces';
+import { INode, IEdge } from '../../shared/interfaces';
 
 @Injectable()
 export class DataService {
