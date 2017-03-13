@@ -1,4 +1,4 @@
-export interface Edge {
+export interface IEdge {
     source: number;
     target: number;
     weight: number;
@@ -6,7 +6,7 @@ export interface Edge {
     description: string;
 }
 
-export interface Node {
+export interface INode {
     id: number;
     weight: number;
     name: string;
