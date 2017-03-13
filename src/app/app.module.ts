@@ -5,11 +5,15 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { AboutComponent } from './about/about.component';
+import { NodeComponent } from './node/node.component';
+import { EdgeComponent } from './edge/edge.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AboutComponent
+    AboutComponent,
+    NodeComponent,
+    EdgeComponent
   ],
   imports: [
     BrowserModule,
