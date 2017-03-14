@@ -1,0 +1,9 @@
+[
+    {
+        "source": 1,
+        "target": 2,
+        "weight": 5,
+        "name": "Books",
+        "description": "They both like books."
+    }
+]

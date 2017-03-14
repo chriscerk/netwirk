@@ -13,19 +13,16 @@ export class DataService {
 
   constructor(private http: Http) { }
 
-  nodesBaseUrl: string = 'nodes.json';
-  edgesBaseUrl: string = 'edges.json';
-  nodes: INode[];
-  edges: IEdge[];
+  dataBaseUrl: string = 'assets/data/';
     
   getEdges(): Observable<IEdge[]> {
-      return this.http.get(this.edgesBaseUrl)
+      return this.http.get(this.dataBaseUrl + "edges.json")
                   .map((res: Response) => res.json())
                   .catch(this.handleError); 
   }
 
   getNodes(): Observable<INode[]> {
-      return this.http.get(this.nodesBaseUrl)
+      return this.http.get(this.dataBaseUrl + "nodes.json")
                   .map((res: Response) => res.json())
                   .catch(this.handleError); 
   }

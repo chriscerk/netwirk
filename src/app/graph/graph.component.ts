@@ -14,15 +14,23 @@ export class GraphComponent implements OnInit {
   nodes: INode[];
   edges: IEdge[];
   filteredEdges: IEdge[];
+  filteredNodes: INode[];
   title: string;
 
   ngOnInit() {
-    this.title = "Test Graph";
+    this.title = "Graph";
 
-     this.dataService.getEdges()
-        .subscribe((edges: IEdge[]) => {
-          this.edges = this.filteredEdges = edges;
-        });
+    this.dataService.getEdges()
+      .subscribe((edges: IEdge[]) => {
+        this.edges = this.filteredEdges = edges;
+      });
+
+    this.dataService.getNodes()
+      .subscribe((nodes: INode[]) => {
+        this.nodes = this.filteredNodes = nodes;
+    });
   }
+
+  
 
 }
