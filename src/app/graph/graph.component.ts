@@ -1,3 +1,5 @@
+import { EdgeComponent } from './../shared/edge/edge.component';
+import { NodeComponent } from './../shared/node/node.component';
 import { INode, IEdge } from './../shared/interfaces';
 import { DataService } from './../core/services/data.service';
 import { Component, OnInit } from '@angular/core';

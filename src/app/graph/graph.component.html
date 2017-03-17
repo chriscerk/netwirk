@@ -1,17 +1,10 @@
 <h2>{{title}}</h2>
 <h3>Nodes</h3>
 <div *ngFor="let node of nodes">
-  {{node.id}}
-  {{node.name}}
-  {{node.weight}}
-  {{node.description}}
+  <node [data]="node"></node>
 </div>
 
 <h3>Edges</h3>
 <div *ngFor="let edge of edges">
-  {{edge.source}}
-  {{edge.target}}
-  {{edge.name}}
-  {{edge.weight}}
-  {{edge.description}}
+  <edge [data]="edge"></edge>
 </div>

@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { INode } from './../interfaces';
+import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
 
 @Component({
-  selector: 'app-node',
+  selector: 'node',
   templateUrl: './node.component.html',
   styleUrls: ['./node.component.css']
 })
 export class NodeComponent implements OnInit {
-
+  @Input() data: INode;
   constructor() { }
 
   ngOnInit() {
   }
 
+  ngAfterViewInit() {
+
+  }
 }
