@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
   imports: [
     CommonModule, SharedModule
   ],
-  declarations: [GraphComponent]
+  declarations: [ GraphComponent ],
+  exports: [ GraphComponent ]
 })
 export class GraphModule { }

@@ -1,10 +1,12 @@
+import { MyNetwirkComponent } from './my-netwirk/my-netwirk.component';
 import { GraphComponent } from './graph/graph.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, PreloadAllModules, NoPreloading } from '@angular/router';
 import { PreloadModulesStrategy } from './core/strategies/preload-modules.strategy';
 
 const app_routes: Routes = [
-  { path: '', pathMatch:'full', redirectTo: '/graph' },
+  { path: '', pathMatch:'full', redirectTo: '/myNetwirk' },
+  { path: 'myNetwirk', component: MyNetwirkComponent},
   { path: 'graph', component: GraphComponent},
   { path: 'about', loadChildren: 'app/about/about.module#AboutModule'},
   { path: '**', pathMatch:'full', redirectTo: '/graph' } //catch any unfound routes and redirect to home page

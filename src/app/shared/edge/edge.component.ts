@@ -8,6 +8,7 @@ import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
 })
 export class EdgeComponent implements OnInit {
   @Input() data: IEdge;
+  @Input() format: string;
 
   constructor() { }
 

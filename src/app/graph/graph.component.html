@@ -1,10 +1,40 @@
-<h2>{{title}}</h2>
-<h3>Nodes</h3>
-<div *ngFor="let node of nodes">
-  <node [data]="node"></node>
-</div>
+<h3>{{title}}</h3>
 
-<h3>Edges</h3>
-<div *ngFor="let edge of edges">
-  <edge [data]="edge"></edge>
-</div>
+<h4>Nodes</h4>
+<node [data]="node" (click)="getNodeInfo()" [format]="circle" class={{circle}} *ngFor="let node of nodes"></node>
+
+
+<h4>Nodes Table</h4>
+<table class="table" *ngIf="nodes">
+    <thead class={{format}}>
+        <tr>
+            <th>id</th>
+            <th>weight</th>
+            <th>name</th>
+            <th>description</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+      <node [data]="node" [format]="format" class={{format}} *ngFor="let node of nodes"></node>
+    </tbody>
+</table>
+
+<h4>Edges Table</h4>
+<table class="table" *ngIf="nodes">
+    <thead class={{format}}>
+        <tr>
+            <th>source</th>
+            <th>target</th>
+            <th>weight</th>
+            <th>name</th>
+            <th>description</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+      <edge [data]="edge" [format]="format" *ngFor="let edge of edges" class={{format}}></edge>
+    </tbody>
+</table>
+
+

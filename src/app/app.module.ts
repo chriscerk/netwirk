@@ -1,3 +1,4 @@
+import { MyNetwirkModule } from './my-netwirk/my-netwirk.module';
 import { AppRoutingModule } from './app-routing.module';
 import { GraphModule } from './graph/graph.module';
 import { AboutModule } from './about/about.module';
@@ -14,6 +15,7 @@ import { AppComponent } from './app.component';
   imports: [
     CoreModule,
     SharedModule,
+    MyNetwirkModule,
     GraphModule,
     AboutModule,
     AppRoutingModule,

@@ -1,4 +1,5 @@
 export interface IEdge {
+    id: number;
     source: number;
     target: number;
     weight: number;

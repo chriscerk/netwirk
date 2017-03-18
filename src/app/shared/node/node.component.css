@@ -1,0 +1,26 @@
+span.tableView {
+    display:table-cell;
+    text-align: center;
+    font-size: 16px;
+    padding: 3px;
+}
+
+span.tableView:hover {
+    background-color: antiquewhite;
+}
+
+:host.tableView:nth-child(odd) {
+    background-color: white;
+}
+
+:host.tableView:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+:host.tableView {
+    display: table-row;
+}
+
+:host.tableView:hover {
+    background-color:rgba(250, 235, 215, 0.3);
+}

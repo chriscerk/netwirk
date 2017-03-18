@@ -8,6 +8,8 @@ import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
 })
 export class NodeComponent implements OnInit {
   @Input() data: INode;
+  @Input() format: string;
+  
   constructor() { }
 
   ngOnInit() {

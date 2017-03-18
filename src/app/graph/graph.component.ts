@@ -2,7 +2,7 @@ import { EdgeComponent } from './../shared/edge/edge.component';
 import { NodeComponent } from './../shared/node/node.component';
 import { INode, IEdge } from './../shared/interfaces';
 import { DataService } from './../core/services/data.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'graph',
@@ -10,14 +10,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./graph.component.css']
 })
 export class GraphComponent implements OnInit {
-
-  constructor(private dataService: DataService) { }
-
+  @Input() format: string;
   nodes: INode[];
   edges: IEdge[];
   filteredEdges: IEdge[];
   filteredNodes: INode[];
   title: string;
+
+  constructor(private dataService: DataService) { }
 
   ngOnInit() {
     this.title = "Graph";
@@ -32,7 +32,4 @@ export class GraphComponent implements OnInit {
         this.nodes = this.filteredNodes = nodes;
     });
   }
-
-  
-
 }
