@@ -1,5 +1,7 @@
 <h3>{{title}}</h3>
 
+<svg width="960" height="400" #svg></svg>
+
 <h4>Nodes</h4>
 <node [data]="node" (click)="getNodeInfo()" [format]="circle" class={{circle}} *ngFor="let node of nodes"></node>
 
