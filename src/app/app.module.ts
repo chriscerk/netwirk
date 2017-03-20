@@ -9,9 +9,10 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
+import { BarChartComponent } from './bar-chart/bar-chart.component';
 
 @NgModule({
-  declarations: [ AppComponent ],
+  declarations: [ AppComponent, BarChartComponent ],
   imports: [
     CoreModule,
     SharedModule,
