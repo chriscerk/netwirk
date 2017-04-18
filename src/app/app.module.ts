@@ -1,3 +1,4 @@
+import { BarchartComponent } from './shared/barchart/barchart.component';
 import { MyNetwirkModule } from './my-netwirk/my-netwirk.module';
 import { AppRoutingModule } from './app-routing.module';
 import { GraphModule } from './graph/graph.module';
@@ -9,10 +10,9 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
-import { BarChartComponent } from './bar-chart/bar-chart.component';
 
 @NgModule({
-  declarations: [ AppComponent, BarChartComponent ],
+  declarations: [ AppComponent, BarchartComponent ],
   imports: [
     CoreModule,
     SharedModule,

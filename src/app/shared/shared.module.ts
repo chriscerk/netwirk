@@ -1,3 +1,4 @@
+import { BarchartModule } from './barchart/barchart.module';
 import { NodeModule } from './node/node.module';
 import { EdgeModule } from './edge/edge.module';
 import { NgModule } from '@angular/core';
@@ -7,8 +8,8 @@ import { BarchartComponent } from './barchart/barchart.component';
 
 
 @NgModule({
-  imports: [CommonModule, EdgeModule, NodeModule ],
+  imports: [ CommonModule, EdgeModule, NodeModule, BarchartModule, EdgeModule, NodeModule ],
   exports: [ CommonModule, FormsModule, EdgeModule, NodeModule ],
-  declarations: [ BarchartComponent]
+  declarations: []
 })
 export class SharedModule { }
