@@ -3,7 +3,7 @@ import { NodeComponent } from './../shared/node/node.component';
 import { INode, IEdge } from './../shared/interfaces';
 import { DataService } from './../core/services/data.service';
 import { Component, OnInit, Input, OnChanges, ViewChild, ElementRef, ViewEncapsulation } from '@angular/core';
-import { D3Service, D3 } from 'd3-ng2-service';
+import { D3Service, D3, ForceLink } from 'd3-ng2-service';
 
 @Component({
   selector: 'graph',
@@ -11,19 +11,11 @@ import { D3Service, D3 } from 'd3-ng2-service';
   styleUrls: ['./graph.component.css']
 })
 export class GraphComponent implements OnInit {
+  @Input() format: string;
   @ViewChild('svg') private graphContainer: ElementRef;
-  private svg: any;
   private margin: any = { top: 20, bottom: 20, left: 20, right: 20};
   private width: number;
   private height: number;
-  private xScale: any;
-  private yScale: any;
-  private colors: any;
-  private xAxis: any;
-  private yAxis: any;
-  private d: any;
-
-  @Input() format: string;
   nodes: INode[];
   edges: IEdge[];
   filteredEdges: IEdge[];
@@ -72,7 +64,7 @@ export class GraphComponent implements OnInit {
           .selectAll("line")
           .data(this.edges)
           .enter().append("line")
-          .attr("stroke-width", function(d: any) { return Math.sqrt(d.value); });
+          .attr("stroke-width", function(d: any) { return Math.sqrt(d.weight); });
 
       var node = svg.append("g")
           .attr("class", "nodes")
@@ -82,9 +74,10 @@ export class GraphComponent implements OnInit {
           .attr("r", 5)
           .attr("fill", function(d: any) { return color(d.group); });
           // .call(this.d3.drag()
-          //     .on("start", dragstarted)
-          //     .on("drag", dragged)
-          //     .on("end", dragended));
+          // .on("start", dragstarted)
+          // .on("drag", dragged)
+          // .on("end", dragended));
+          
 
       node.append("title")
           .text(function(d: any) { return d.id; });

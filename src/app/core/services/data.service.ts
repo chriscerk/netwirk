@@ -1,3 +1,4 @@
+import { IPost, IMediaPost, IGenreData } from './../../shared/interfaces';
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
@@ -17,6 +18,18 @@ export class DataService {
     
   getEdges(): Observable<IEdge[]> {
       return this.http.get(this.dataBaseUrl + "edges.json")
+                  .map((res: Response) => res.json())
+                  .catch(this.handleError); 
+  }
+
+  getPosts(): Observable<IPost[]> {
+      return this.http.get(this.dataBaseUrl + "indieheads_top_posts.json")
+                  .map((res: Response) => res.json())
+                  .catch(this.handleError); 
+  }
+
+  getTopGenres(): Observable<IGenreData[]> {
+      return this.http.get(this.dataBaseUrl + "indieheads_top_genres.json")
                   .map((res: Response) => res.json())
                   .catch(this.handleError); 
   }

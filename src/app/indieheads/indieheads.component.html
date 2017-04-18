@@ -1,0 +1,56 @@
+<h2>An analysis of</h2>
+<h1>/r/indieheads</h1>
+
+<div *ngIf="genreData">
+  <app-barchart [chartData]="genreData"></app-barchart>
+</div>
+<br>
+<h2>The Processed Posts Data</h2>
+<table class="table" *ngIf="posts">
+    <thead>
+    <tr>
+        <th>Artist</th>
+        <th>Release</th>
+        <th>Score</th>
+        <th>Comments</th>
+        <th>Tag</th>
+        <th>Genres (According to LastFM)</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let post of posts"> 
+            <td>{{post.artist_name}}</td>
+            <td>{{post.artist_release}}</td>
+            <td>{{post.score}}</td>
+            <td>{{post.comment_count}}</td>
+            <td>{{post.tag}}</td>
+            <td *ngFor="let genre of post.artist_genres; let i = index">{{genre}}</td> 
+        </tr>
+    </tbody>
+</table>
+<br>
+
+<div *ngIf="!posts">
+  <h2>No posts from /r/indieheads could be retrieved.</h2>
+</div>
+
+
+<h2>The Processed Genres Data</h2>
+<table class="table" *ngIf="genreData">
+    <thead>
+    <tr>
+        <th>Genre (According to LastFM)</th>
+        <th>Popularity (Post Score + Number of Comments)</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of genreData"> 
+            <td>{{data.genre_name}}</td>
+            <td>{{data.popularity}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<div *ngIf="!genreData">
+  <h2>No data from genres could be retrieved.</h2>
+</div>

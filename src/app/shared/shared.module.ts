@@ -9,7 +9,7 @@ import { BarchartComponent } from './barchart/barchart.component';
 
 @NgModule({
   imports: [ CommonModule, EdgeModule, NodeModule, BarchartModule, EdgeModule, NodeModule ],
-  exports: [ CommonModule, FormsModule, EdgeModule, NodeModule ],
+  exports: [ CommonModule, FormsModule, EdgeModule, NodeModule, BarchartModule ],
   declarations: []
 })
 export class SharedModule { }

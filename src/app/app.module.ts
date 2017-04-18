@@ -1,3 +1,4 @@
+import { IndieheadsModule } from './indieheads/indieheads.module';
 import { BarchartComponent } from './shared/barchart/barchart.component';
 import { MyNetwirkModule } from './my-netwirk/my-netwirk.module';
 import { AppRoutingModule } from './app-routing.module';
@@ -12,11 +13,12 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 
 @NgModule({
-  declarations: [ AppComponent, BarchartComponent ],
+  declarations: [ AppComponent ],
   imports: [
     CoreModule,
     SharedModule,
     MyNetwirkModule,
+    IndieheadsModule,
     GraphModule,
     AboutModule,
     AppRoutingModule,

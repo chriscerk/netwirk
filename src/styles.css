@@ -1,1 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+h1, h2, h3, p {
+    font-family: 'Lato';
+    font-weight: 300;
+}
+
+body, html {
+    width: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+html {
+    overflow: auto;
+
+}
